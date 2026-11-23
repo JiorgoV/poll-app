@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'styles/fonts';
+
+:root {
+  // Colors
+  --color-bg-dark: #35273a;
+  --color-text-dark: #221227;
+  --color-orange: #ffb770;
+  --color-peach: #ffcfa1;
+  --color-peach-light: #fee9d4;
+  --color-lilac-light: #faf5fe;
+  --color-card-transparent: rgba(217, 217, 217, 0.08);
+  --color-white: #ffffff;
+
+  // Fonts
+  --font-headline: 'Nerko One', cursive;
+  --font-text: 'Mulish', sans-serif;
+  --font-button: 'Nokora', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-text);
+  background-color: var(--color-bg-dark);
+  color: var(--color-white);
+}
