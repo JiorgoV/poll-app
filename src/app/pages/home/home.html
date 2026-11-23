@@ -1,0 +1,5 @@
+<ul>
+    @for (survey of surveyService.surveyList(); track survey.id) {
+    <li>{{survey.title}}</li>
+    }
+</ul>
