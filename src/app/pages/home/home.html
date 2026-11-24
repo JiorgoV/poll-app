@@ -1,6 +1,8 @@
-<app-hero></app-hero>
-
-<app-ending-soon></app-ending-soon>
+<main class="home">
+    <app-hero />
+    <h2 class="home__title">Your surveys</h2>
+    <app-ending-soon />
+</main>
 
 <ul>
     @for (survey of surveyService.endingSoonSurveys(); track survey.id) {
