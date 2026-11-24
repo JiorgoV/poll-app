@@ -1,7 +1,7 @@
 <app-hero></app-hero>
 
 <ul>
-    @for (survey of surveyService.surveyList(); track survey.id) {
-    <li>{{survey.title}}</li>
+    @for (survey of surveyService.endingSoonSurveys(); track survey.id) {
+    <li>{{ survey.title }} - {{ survey.endDate }}</li>
     }
 </ul>
