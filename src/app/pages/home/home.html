@@ -1,5 +1,7 @@
 <app-hero></app-hero>
 
+<app-ending-soon></app-ending-soon>
+
 <ul>
     @for (survey of surveyService.endingSoonSurveys(); track survey.id) {
     <li>{{ survey.title }} - {{ survey.endDate }}</li>
