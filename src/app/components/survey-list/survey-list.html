@@ -1,6 +1,19 @@
 <button type="button" (click)="showActive.set(true)">Active</button>
 <button type="button" (click)="showActive.set(false)">Past</button>
 
+<div class="survey-list__dropdown">
+    <button type="button" (click)="toggleDropdown()">Sort by categories ▼</button>
+
+    @if (isDropdownOpen()) {
+    <ul>
+        <li (click)="selectCategory('All')">All Surveys</li>
+        @for (category of categories; track category) {
+        <li (click)="selectCategory(category)">{{ category }}</li>
+        }
+    </ul>
+    }
+</div>
+
 
 @for (survey of filteredSurveys(); track survey.id) {
 <p>{{survey.title}}</p>
