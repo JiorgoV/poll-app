@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { SurveyService } from '../../services/survey';
 import { Hero } from '../../components/hero/hero';
 import { EndingSoon } from '../../components/ending-soon/ending-soon';
+import { SurveyList } from '../../components/survey-list/survey-list';
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, EndingSoon],
+  imports: [Hero, EndingSoon, SurveyList],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

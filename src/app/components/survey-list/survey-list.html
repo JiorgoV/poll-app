@@ -1,0 +1,7 @@
+<button type="button" (click)="showActive.set(true)">Active</button>
+<button type="button" (click)="showActive.set(false)">Past</button>
+
+
+@for (survey of filteredSurveys(); track survey.id) {
+<p>{{survey.title}}</p>
+}
