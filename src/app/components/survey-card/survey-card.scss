@@ -1,0 +1,33 @@
+.survey-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 5px 50px 5px 5px;
+    background-color: var(--color-card-transparent);
+    margin-top: 8px;
+}
+
+.survey-card__category {
+    font-family: var(--font-text);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--color-peach);
+}
+
+.survey-card__title {
+    font-family: var(--font-text);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.survey-card__badge {
+  align-self: flex-end;
+  margin-top: auto;
+  padding: 3px 6px;
+  border-top-right-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  background-color: var(--color-peach);
+}
