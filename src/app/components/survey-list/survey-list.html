@@ -1,20 +1,38 @@
-<button type="button" (click)="showActive.set(true)">Active</button>
-<button type="button" (click)="showActive.set(false)">Past</button>
+<section class="survey-list">
+    <div class="survey-list__controls">
+        <div class="survey-list__tabs">
+            <button type="button" class="survey-list__tab" [class.survey-list__tab--active]="showActive()"
+                (click)="showActive.set(true)">Active survey</button>
+            <button type="button" class="survey-list__tab" [class.survey-list__tab--active]="!showActive()"
+                (click)="showActive.set(false)">Past survey</button>
+        </div>
 
-<div class="survey-list__dropdown">
-    <button type="button" (click)="toggleDropdown()">Sort by categories ▼</button>
+        <div class="survey-list__dropdown">
+            <button type="button" class="survey-list__dropdown-btn" (click)="toggleDropdown()">
+                Sort by categories ▼
+            </button>
+            @if (isDropdownOpen()) {
+            <ul class="survey-list__dropdown-menu">
+                <li>
+                    <button type="button" class="survey-list__dropdown-item" (click)="selectCategory('All')">All
+                        Surveys</button>
+                </li>
+                @for (category of categories; track category) {
+                <li>
+                    <button type="button" class="survey-list__dropdown-item" (click)="selectCategory(category)">{{
+                        category }}</button>
+                </li>
+                }
+            </ul>
+            }
+        </div>
+    </div>
 
-    @if (isDropdownOpen()) {
-    <ul>
-        <li (click)="selectCategory('All')">All Surveys</li>
-        @for (category of categories; track category) {
-        <li (click)="selectCategory(category)">{{ category }}</li>
+    <div class="survey-list__cards">
+        @for (survey of filteredSurveys(); track survey.id) {
+        <app-survey-card [survey]="survey" />
+        } @empty {
+        <p class="survey-list__empty">No surveys found.</p>
         }
-    </ul>
-    }
-</div>
-
-
-@for (survey of filteredSurveys(); track survey.id) {
-<app-survey-card [survey]="survey" />
-}
+    </div>
+</section>
