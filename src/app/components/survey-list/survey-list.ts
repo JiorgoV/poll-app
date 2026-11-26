@@ -1,9 +1,10 @@
 import { Component, inject, signal, computed } from '@angular/core';
 import { SurveyService } from '../../services/survey';
 import { CATEGORIES } from '../../models/survey.model';
+import { SurveyCard } from '../survey-card/survey-card';
 
 @Component({
-  imports: [],
+  imports: [SurveyCard],
   selector: 'app-survey-list',
   styleUrl: './survey-list.scss',
   templateUrl: './survey-list.html',

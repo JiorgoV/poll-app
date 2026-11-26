@@ -16,5 +16,5 @@
 
 
 @for (survey of filteredSurveys(); track survey.id) {
-<p>{{survey.title}}</p>
+<app-survey-card [survey]="survey" />
 }
